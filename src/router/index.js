@@ -56,23 +56,56 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/line',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: 'line', icon: 'example' },
     children: [
       {
         path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        name: 'LineTable',
+        component: () => import('@/views/line/table'),
+        hidden: false,
+        meta: { title: 'lineTable', icon: 'form' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
+        path: 'cloud',
+        name: 'PointCloud',
+        component: () => import('@/views/line/table'), // cloud
+        meta: { title: 'lineTower', icon: 'form' }
+      }/*,
+      {
+        path: 'earth',
+        name: 'EarthCloud',
+        component: () => import('@/views/line/earth'),
+        meta: { title: 'lineEarth', icon: 'form' }
+      }*/
+    ]
+  },
+
+  {
+    path: '/data',
+    component: Layout,
+    redirect: '/data/upload',
+    name: 'Data',
+    meta: { title: 'data', icon: 'example' },
+    children: [
+      {
+        path: 'upload',
+        name: 'upload',
+        component: () => import('@/views/table/index'),
+        meta: { title: 'upload', icon: 'table' }
+      },
+      {
+        path: 'analyze',
+        name: 'analyze',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: 'analyze', icon: 'tree' }
+      },
+      {
+        path: 'statistics',
+        name: 'statistics',
+        component: () => import('@/views/tree/index'),
+        meta: { title: 'statistics', icon: 'tree' }
       }
     ]
   },

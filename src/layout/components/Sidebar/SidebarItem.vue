@@ -30,7 +30,7 @@ import { isExternal } from '@/utils/validate'
 import Item from './Item'
 import AppLink from './Link'
 import FixiOSBug from './FixiOSBug'
-
+import { generateTitle } from '@/utils/i18n' // bblu
 export default {
   name: 'SidebarItem',
   components: { Item, AppLink },
